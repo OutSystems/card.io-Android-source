@@ -2,6 +2,39 @@
 
 [![card.io logo](https://raw.githubusercontent.com/card-io/press-kit/master/card_io_logo_200.png "card.io")](https://www.card.io)
 
+# Card IO Fork
+
+This repo is a fork of the original Card IO Android SDK Source Code.
+
+The main purpose being to fix the issues with Android 15, namely support for 16KB page size devices.
+
+## Building this forked version
+
+1. Clone this forked repo
+2. Open the cloned project in a terminal and init its `dmz` submodule: `git submodule sync; git submodule update --init --recursive`
+3. Install NDK 17 - https://github.com/android/ndk/wiki/Unsupported-Downloads#r17c
+4. If you are on a MAC OS be sure to follow the steps 4a. and 4b.
+
+    4a. Update the ndk-build to not fail if running on arm64 architecture (M1 processors) - https://stackoverflow.com/a/69555276
+    
+    4b. For Mac OS to not block NDK, run `sudo spctl --master-disable` and open Mac's Settings – Privacy and Security – Allow Applications from – Anywhere
+5. Paste the ndk folder in the Android studio NDK location.
+6. Open the project in Android Studio (used Android Studio Ladybug | 2024.2.1 Patch 2 on Mac)
+7. Download SDK 25 if you haven't already (In Android Studio -> Tools -> SDK Manager)
+8. Set the JDK version of the project to JDK 11.
+9. You should now be able to sync and build the card-io SDK.
+
+The card-io SDK crashes on 16KB page size devices. The same thing applies to the OpenCV library.
+
+See https://github.com/opencv/opencv/issues/26027 + https://github.com/opencv/opencv/pull/26057
+
+The next steps would be do update the OpenCV library and build it with a more recent version of NDK - https://developer.android.com/guide/practices/page-sizes#compile-r27
+
+------------------------
+------------------------
+------------------------
+------------------------
+
 Credit card scanning for Android apps
 =====================================
 
