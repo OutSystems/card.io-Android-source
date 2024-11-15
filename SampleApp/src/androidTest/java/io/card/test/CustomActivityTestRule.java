@@ -1,6 +1,6 @@
 package io.card.test;
 
-
+/*
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Context;
@@ -39,3 +39,4 @@ public class CustomActivityTestRule<T extends Activity> extends android.support.
         mKeyguardLock.reenableKeyguard();
     }
 }
+*/

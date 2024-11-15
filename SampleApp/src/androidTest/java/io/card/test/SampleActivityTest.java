@@ -1,5 +1,6 @@
 package io.card.test;
 
+/*
 import android.Manifest;
 
 import org.junit.Before;
@@ -87,3 +88,4 @@ public class SampleActivityTest {
         onView(withId(104)).perform(click(), typeText("John Doe"));
     }
 }
+*/

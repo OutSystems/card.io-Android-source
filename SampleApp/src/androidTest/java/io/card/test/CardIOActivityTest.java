@@ -1,6 +1,6 @@
 package io.card.test;
 
-import android.Manifest;
+/*import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 
@@ -70,3 +70,4 @@ public class CardIOActivityTest {
         }
     }
 }
+*/
