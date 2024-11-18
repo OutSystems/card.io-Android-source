@@ -14,14 +14,8 @@ LOCAL_DMZ_DIR := card.io-dmz
 ifneq (,$(filter $(TARGET_ARCH_ABI),armeabi-v7a x86 arm64-v8a x86_64))
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := opencv_core
-LOCAL_SRC_FILES := lib/$(TARGET_ARCH_ABI)/libopencv_core.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := opencv_imgproc
-LOCAL_SRC_FILES := lib/$(TARGET_ARCH_ABI)/libopencv_imgproc.so
-LOCAL_SHARED_LIBRARIES := opencv_core 
+LOCAL_MODULE := opencv_java4
+LOCAL_SRC_FILES := lib/$(TARGET_ARCH_ABI)/libopencv_java4.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 endif
@@ -36,7 +30,7 @@ ifneq (,$(filter $(TARGET_ARCH_ABI),armeabi-v7a x86 arm64-v8a x86_64))
 
 LOCAL_MODULE := cardioRecognizer
 LOCAL_LDLIBS := -llog -L$(SYSROOT)/usr/lib -lz -ljnigraphics
-LOCAL_SHARED_LIBRARIES := cpufeatures opencv_imgproc opencv_core 
+LOCAL_SHARED_LIBRARIES := cpufeatures opencv_java4
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(LOCAL_DMZ_DIR) $(LOCAL_PATH)/$(LOCAL_DMZ_DIR)/cv
 LOCAL_SRC_FILES := $(LOCAL_DMZ_DIR)/dmz_all.cpp nativeRecognizer.cpp
