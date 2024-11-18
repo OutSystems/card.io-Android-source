@@ -13,7 +13,7 @@ task assemble {}
 ext {
     sdkVersion = 25
     buildToolsVersion = '30.0.2'
-    ndkVersion = '17.2.4988734'
+    ndkVersion = '28.0.12433566'
 }
 
 repositories {
