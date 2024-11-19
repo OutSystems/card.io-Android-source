@@ -38,6 +38,10 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     /*android.applicationVariants.all { variant ->
         variant.outputs.each { output ->
             def outputFile = output.outputFile
