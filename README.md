@@ -19,11 +19,21 @@ Until dmz code is merged, checkout branch https://github.com/OS-pedrogustavobilr
 6. Download SDK 25 if you haven't already (In Android Studio -> Tools -> SDK Manager)
 7. Set the JDK version of the project to JDK 11. 
 8. If you are on a MAC OS and Apple is blocking NDK binaries, go to the folder where NDK is installed and run in a terminal `sudo spctl --master-disable`; then open Mac's Settings – Privacy and Security – Allow Applications from – Anywhere 
-9. You should now be able to sync and build the card-io SDK.
+9. You should now be able to sync and build the card-io SDK -> `./gradlew assembleRelease`
+10. Aar file in `card.io/build/outputs/aar`
 
-The Open CV library's most recent version, 4.10.0, does not support 16KB page sizes. See https://github.com/opencv/opencv/issues/26027 + https://github.com/opencv/opencv/pull/26057
+### Open CV
 
-The next steps would be to build the OpenCV library from source with a more recent version of NDK - https://developer.android.com/guide/practices/page-sizes#compile-r27
+The Open CV library's most recent version, 4.10.0, does not support 16KB page sizes. See https://github.com/opencv/opencv/issues/26027
+
+So we built it from source using the branch from https://github.com/opencv/opencv/pull/26057. NDK 27 + JDK 17 (I set the JDK version in `JAVA_HOME`):
+
+```
+python3 platforms/android/build_sdk.py --config platforms/android/default.config.py --no_samples_build --sdk_path <REPLACE WITH ANDROID SDK PATH> --ndk_path <REPLACE WITH NDK 27 PATH>  opencv_build_16kb
+```
+
+Build took several minutes. The .so files used in this card io repo's `card.io/src/main/jni/lib` would be in OpenCV repo's `opencv_build_16kb/OpenCV-android-sdk/sdk/native/libs`.
+
 
 ------------------------
 ------------------------
