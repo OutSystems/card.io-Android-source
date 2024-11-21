@@ -26,13 +26,9 @@ Until dmz code is merged, checkout branch https://github.com/OS-pedrogustavobilr
 
 The Open CV library's most recent version, 4.10.0, does not support 16KB page sizes. See https://github.com/opencv/opencv/issues/26027
 
-So we built it from source using the branch from https://github.com/opencv/opencv/pull/26057. NDK 27 + JDK 17 (I set the JDK version in `JAVA_HOME`):
+So we built it from source using the branch from https://github.com/opencv/opencv/pull/26057.
 
-```
-python3 platforms/android/build_sdk.py --config platforms/android/default.config.py --no_samples_build --sdk_path <REPLACE WITH ANDROID SDK PATH> --ndk_path <REPLACE WITH NDK 27 PATH>  opencv_build_16kb
-```
-
-Build took several minutes. The .so files used in this card io repo's `card.io/src/main/jni/lib` would be in OpenCV repo's `opencv_build_16kb/OpenCV-android-sdk/sdk/native/libs`.
+Because OpenCV's build script generates an .so file for the entire library (increases the apk size by too much), but we only want a few modules, we use the script at "opencv/build_opencv_16kb.sh" 
 
 
 ------------------------
