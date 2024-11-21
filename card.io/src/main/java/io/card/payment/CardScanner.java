@@ -128,7 +128,8 @@ class CardScanner implements Camera.PreviewCallback, Camera.AutoFocusCallback,
             Log.d(Util.PUBLIC_LOG_TAG, "    nUseX86():  " + nUseX86());
 
             if (usesSupportedProcessorArch()) {
-                loadLibrary("opencv_java4");
+                loadLibrary("opencv_core");
+                loadLibrary("opencv_imgproc");
                 loadLibrary("cardioRecognizer");
             } else {
                 Log.w(Util.PUBLIC_LOG_TAG,
