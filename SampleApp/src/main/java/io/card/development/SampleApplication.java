@@ -7,6 +7,6 @@ public class SampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        DebugTools.setup();
+        DebugTools.setup(this);
     }
 }
