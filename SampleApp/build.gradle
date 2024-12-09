@@ -52,6 +52,6 @@ dependencies {
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.4'
 
-    //androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
-    //androidTestImplementation "com.github.lkorth:device-automator:01d85912ec"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
+    androidTestImplementation "com.github.lkorth:device-automator:01d85912ec"
 }

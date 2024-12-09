@@ -3,7 +3,7 @@ package io.card.payment;
 /* CardScannerTester.java
  * See the file "LICENSE.md" for the full license governing this code.
  */
-/*
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
@@ -110,4 +110,4 @@ public class CardScannerTester extends CardScanner {
             }
         }
     }
-}*/
+}
