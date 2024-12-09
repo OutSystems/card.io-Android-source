@@ -691,8 +691,7 @@ public final class CardIOActivity extends Activity {
      * @return The String version of this SDK
      */
     public static String sdkVersion() {
-        return "5.5.1";
-        //return BuildConfig.VERSION_NAME;
+        return BuildConfig.CARD_IO_SDK_VERSION;
     }
 
     /**

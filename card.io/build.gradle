@@ -13,7 +13,6 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion rootProject.ext.sdkVersion
-        versionName "5.5.1"
 
         ndk {
             moduleName "cardioRecognizer"
@@ -22,6 +21,11 @@ android {
         consumerProguardFiles 'proguard.cfg'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        versionName = "5.5.1"
+        buildTypes.configureEach {
+            buildConfigField "String", "CARD_IO_SDK_VERSION", "\"$versionName\""
+        }
     }
 
     resourcePrefix 'cio_'
