@@ -5,13 +5,6 @@ card.io Android SDK change log and release notes
 ----
 * Support 16KB page size devices - [PR #1](https://github.com/OutSystems/card.io-Android-source/pull/1)
 
-----
-----
-----
-
-
-
-
 5.5.1
 -----
 * Remove sample app signing (fixes [#125](https://github.com/card-io/card.io-Android-source/issues/125)).
