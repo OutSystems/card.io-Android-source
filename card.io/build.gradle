@@ -22,7 +22,7 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        versionName = "5.5.1"
+        versionName = "5.5.1-OS1"
         buildTypes.configureEach {
             buildConfigField "String", "CARD_IO_SDK_VERSION", "\"$versionName\""
         }
