@@ -17,7 +17,7 @@ Until dmz code is merged, checkout branch https://github.com/OS-pedrogustavobilr
 4. Install NDK 28 - Android Studio -> Tools -> SDK Manager 
 5. Open the project in Android Studio (used Android Studio Ladybug | 2024.2.1 Patch 2 on Mac)
 6. Download SDK 25 if you haven't already (In Android Studio -> Tools -> SDK Manager)
-7. Set the JDK version of the project to JDK 11. 
+7. Set the JDK version of the project to JDK 17. 
 8. If you are on a MAC OS and Apple is blocking NDK binaries, go to the folder where NDK is installed and run in a terminal `sudo spctl --master-disable`; then open Mac's Settings – Privacy and Security – Allow Applications from – Anywhere 
 9. You should now be able to sync and build the card-io SDK -> `./gradlew assembleRelease`
 10. Aar file in `card.io/build/outputs/aar`
@@ -28,7 +28,7 @@ The Open CV library's most recent version, 4.10.0, does not support 16KB page si
 
 So we built it from source using the branch from https://github.com/opencv/opencv/pull/26057.
 
-Because OpenCV's build script generates an .so file for the entire library (increases the apk size by too much), but we only want a few modules, we use the script at "opencv/build_opencv_16kb.sh" 
+Because OpenCV's build script generates an .so file for the entire library (increases the apk size by too much), but we only want a few modules, we use the script at [opencv/build_opencv_16kb.sh] 
 
 
 ------------------------

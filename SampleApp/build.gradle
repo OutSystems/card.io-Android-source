@@ -19,10 +19,12 @@ repositories {
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'io.card.development'
+
     defaultConfig {
         applicationId "io.card.development"
         compileSdk 34
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 34
         versionCode 1
         versionName "1.0.0"

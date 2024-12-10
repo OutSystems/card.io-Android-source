@@ -9,9 +9,10 @@ repositories {
 android {
     compileSdkVersion rootProject.ext.sdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+    namespace 'io.card.payment'
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion rootProject.ext.sdkVersion
 
         ndk {
@@ -21,7 +22,9 @@ android {
         consumerProguardFiles 'proguard.cfg'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        buildFeatures {
+            buildConfig = true
+        }
         versionName = "5.5.1-OS1"
         buildTypes.configureEach {
             buildConfigField "String", "CARD_IO_SDK_VERSION", "\"$versionName\""
@@ -64,12 +67,12 @@ task javadocs(type: Javadoc) {
 }
 
 task javadocsJar(type: Jar, dependsOn: javadocs) {
-    classifier = 'javadoc'
+    setArchiveClassifier('javadoc')
     from javadocs.destinationDir
 }
 
 task sourcesJar(type: Jar) {
-    classifier = 'sources'
+    setArchiveClassifier('sources')
     from android.sourceSets.main.java.srcDirs
 }
 
