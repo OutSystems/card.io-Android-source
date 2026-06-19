@@ -11,20 +11,18 @@ The main purpose being to fix the issues with Android 15, namely support for 16K
 ## Building this forked version
 
 1. Clone this forked repo
-2. Open the cloned project in a terminal and init its `dmz` submodule: `git submodule sync; git submodule update --init --recursive`.
-Until dmz code is merged, checkout branch https://github.com/OS-pedrogustavobilro/card.io-dmz/tree/fix/RMET-3602/android15-16kb-page-size
-3. Open the project in Android Studio (used Android Studio Ladybug | 2024.2.1 Patch 2 on Mac)
+2. Open the project folder in a terminal and init its `dmz` submodule: `git submodule sync; git submodule update --init --recursive`.
+3. Open the project in Android Studio (used Android Studio Ladybug | 2024.2.1 Patch 2 on Mac, but you should be able to use a more recent version)
 4. Install NDK 28 - Android Studio -> Tools -> SDK Manager 
-5. Open the project in Android Studio (used Android Studio Ladybug | 2024.2.1 Patch 2 on Mac)
-6. Download SDK 25 if you haven't already (In Android Studio -> Tools -> SDK Manager)
-7. Set the JDK version of the project to JDK 17. 
-8. If you are on a MAC OS and Apple is blocking NDK binaries, go to the folder where NDK is installed and run in a terminal `sudo spctl --master-disable`; then open Mac's Settings – Privacy and Security – Allow Applications from – Anywhere 
-9. You should now be able to sync and build the card-io SDK -> `./gradlew assembleRelease`
-10. Aar file in `card.io/build/outputs/aar`
+5. Download SDK 25 if you haven't already (In Android Studio -> Tools -> SDK Manager)
+6. Set the JDK version of the project to JDK 17. 
+7. If you are on a MAC OS and Apple is blocking NDK binaries, go to the folder where NDK is installed and run in a terminal `sudo spctl --master-disable`; then open Mac's Settings – Privacy and Security – Allow Applications from – Anywhere 
+8. You should now be able to sync and build the card-io SDK -> `./gradlew assembleRelease`
+9. Aar file in `card.io/build/outputs/aar`
 
 ### Open CV
 
-The Open CV library's most recent version, 4.10.0, does not support 16KB page sizes. See https://github.com/opencv/opencv/issues/26027
+The Open CV library's most recent version (at the time of writing - dec 10 2024), 4.10.0, did not support 16KB page sizes. See https://github.com/opencv/opencv/issues/26027
 
 So we built it from source using the branch from https://github.com/opencv/opencv/pull/26057.
 
